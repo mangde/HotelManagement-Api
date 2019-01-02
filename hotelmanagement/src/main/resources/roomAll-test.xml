@@ -1,0 +1,18 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!--
+  ~ COPYRIGHT: Copyright (c) 2018 by Nuance Communications, Inc.
+  ~ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+  ~
+  -->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name = "RoomServiceTest Suite">
+
+    <test name = "RoomService">
+        <classes>
+            <class name = "com.nuance.him.controller.RoomControllerTest" />
+            <class name = "com.nuance.him.service.RoomServiceImplTest" />
+            <class name = "com.nuance.him.dao.RoomDaoImplTest" />
+
+        </classes>
+    </test>
+</suite>

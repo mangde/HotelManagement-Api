@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ COPYRIGHT: Copyright (c) 2018 by Nuance Communications, Inc.
+  ~ * Warning: This product is protected by United States copyright law. Unauthorized use or duplication of this software, in whole or in part, is prohibited.
+  ~
+  -->
+
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="RoomDaoImpl.getAllRooms">
+        <![CDATA[
+            SELECT roomId,type,rate,status FROM room_detail
+        ]]>
+    </entry>
+   <entry key="getAllRooms">
+        <![CDATA[
+            ${RoomDaoImpl.getAllRooms}
+        ]]>
+    </entry>
+
+    <entry key="RoomDaoImpl.getAllAvailableRoom">
+        <![CDATA[
+          SELECT roomId,type,rate,status FROM room_detail where status=?
+    ]]>
+    </entry>
+    <entry key="getAllAvailableRoom">
+        <![CDATA[
+            ${RoomDaoImpl.getAllAvailableRoom}
+        ]]>
+    </entry>
+    <entry key="RoomDaoImpl.getRoomById">
+        <![CDATA[
+         SELECT roomId,type,rate,status FROM room_detail where roomId=?
+    ]]>
+    </entry>
+    <entry key="getRoomById">
+        <![CDATA[
+            ${RoomDaoImpl.getRoomById}
+        ]]>
+    </entry>
+
+    <entry key="RoomDAoImpl.getRoomStatus">
+        <![CDATA[
+          SELECT roomId,status FROM room_detail where roomId=?
+    ]]>
+    </entry>
+    <entry key="getRoomStatus">
+        <![CDATA[
+            ${RoomDaoImpl.getRoomStatus}
+        ]]>
+    </entry>
+
+    <entry key="RoomDaoImpl.insertIntoRoom">
+        <![CDATA[
+        INSERT INTO room_detail (type,rate,status)VALUES(?,?,?)
+    ]]>
+    </entry>
+    <entry key="insertIntoRoom">
+        <![CDATA[
+            ${RoomDaoImpl.insertIntoRoom}
+        ]]>
+    </entry>
+    <entry key="RoomDaoImpl.updateRoom">
+        <![CDATA[
+UPDATE room_detail SET type=?,rate=?,status=? WHERE roomId=?    ]]>
+    </entry>
+    <entry key="updateRoom">
+        <![CDATA[
+            ${RoomDaoImpl.updateRoom}
+        ]]>
+    </entry>
+    <entry key="RoomDaoImpl.deleteRoom">
+        <![CDATA[
+            DELETE FROM room_detail WHERE roomId=?
+]]>
+    </entry>
+    <entry key="deleteRoom">
+        <![CDATA[
+            ${RoomDaoImpl.deleteRoom}
+        ]]>
+    </entry>
+
+    <entry key="BookingDaoImpl.bookRoom">
+        <![CDATA[
+                INSERT INTO booking (customerId,roomId,checkIn,checkOut,bookedBy) VALUES(?,?,?,?,?)
+        ]]>
+    </entry>
+    <entry key="bookRoom">
+        <![CDATA[
+            ${BookingDaoImpl.bookRoom}
+        ]]>
+    </entry>
+    <entry key="BookingDaoImpl.updateRoomStatusNotAvail">
+        <![CDATA[
+               UPDATE room_detail SET status='NotAvailable' WHERE RoomId=?
+        ]]>
+    </entry>
+    <entry key="updateRoomStatusNotAvail">
+        <![CDATA[
+            ${BookingDaoImpl.updateRoomStatus}
+        ]]>
+    </entry>
+    <entry key="BookingDaoImpl.updateStatusAvail">
+        <![CDATA[
+               UPDATE room_detail SET status='Available' WHERE RoomId=?
+        ]]>
+    </entry>
+    <entry key="updateStatusAvail">
+        <![CDATA[
+            ${BookingDaoImpl.updateStatusAvail}
+        ]]>
+    </entry>
+    <entry key="BookingDaoImpl.updateBookingStatus">
+        <![CDATA[
+               UPDATE booking SET releasedBy=? WHERE RoomId=?
+        ]]>
+    </entry>
+    <entry key="updateBookingStatus">
+        <![CDATA[
+            ${BookingDaoImpl.updateBookingStatus}
+        ]]>
+    </entry>
+
+      <!--  <entry key="CustomerDaoImpl.addCustomer">
+            <![CDATA[insert into customer values(?,?,?)]]>
+        </entry>
+        <entry key="CustomerDaoImpl.selectAllCustomers">
+            <![CDATA[select customerId,customerName,email,phone from customer]]>
+        </entry>
+        <entry key="CustomerDaoImpl.deleteCustomer">
+            <![CDATA[delete from customer where customerId = ?]]>
+        </entry>
+        <entry key="CustomerDaoImpl.updateCustomer">
+            <![CDATA[update customer set phone=?,email=? where customerId = ?]]>
+        </entry>
+        <entry key="CustomerDaoImpl.searchCustomer">
+            <![CDATA[select customerId,customerName,email,phone from customer where customerId=?]]>
+        </entry>
+    -->
+
+
+</properties>
